@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,4 +17,18 @@ import { SelectornumericoComponent } from './selectornumerico/selectornumerico.c
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+title='selectorNumerico'
+
+@ViewChild('selector1') selector1: any;
+@ViewChild('selector2') selector2: any;
+
+fijarSelector1(valor:number){
+  this.selector1.fijar(valor);
+}
+
+fijarSelector2(valor:number){
+  this.selector2.fijar(valor);
+}
+
+}
